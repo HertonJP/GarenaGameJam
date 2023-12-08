@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 279424299}
   - component: {fileID: 279424298}
   - component: {fileID: 279424297}
+  - component: {fileID: 279424300}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -477,6 +478,22 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &279424300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279424288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9caf6ef45ed44484599c40cf87637bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  immuneDuration: 1.5
+  immuneInterval: 10
+  isImmune: 0
+  canImmune: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,7 +1053,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1155747943}
   - component: {fileID: 1155747944}
-  - component: {fileID: 1155747945}
   m_Layer: 0
   m_Name: attackRange
   m_TagString: Untagged
@@ -1094,19 +1110,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!114 &1155747945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155747942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126a7edd10bf5614aa4c50292927dbf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 1890822567}
 --- !u!1 &1472397340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,7 +1122,6 @@ GameObject:
   - component: {fileID: 1472397342}
   - component: {fileID: 1472397343}
   - component: {fileID: 1472397344}
-  - component: {fileID: 1472397345}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -1275,33 +1277,6 @@ PolygonCollider2D:
       - {x: 0.42, y: -0.685}
       - {x: 0.32999998, y: -0.53499997}
   m_UseDelaunayMesh: 0
---- !u!50 &1472397345
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472397340}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &1555727794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,6 +1397,51 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1560962111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1560962113}
+  - component: {fileID: 1560962112}
+  m_Layer: 0
+  m_Name: TalentManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1560962112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560962111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5370488dfc78842a844fe5a90fc1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  takenTalents: []
+--- !u!4 &1560962113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560962111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.0307016, y: -0.5767753, z: -0.059673615}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1890822559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,11 +1456,9 @@ GameObject:
   - component: {fileID: 1890822561}
   - component: {fileID: 1890822560}
   - component: {fileID: 1890822566}
-  - component: {fileID: 1890822567}
-  - component: {fileID: 1890822568}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1486,8 +1504,8 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.7
-  gizmoViewMode: 2
-  showBehaviorDesignerGizmo: 1
+  gizmoViewMode: 0
+  showBehaviorDesignerGizmo: 0
 --- !u!195 &1890822561
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1635,48 +1653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee6a55cbbc0f0a4fb0013bcc37930dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1890822567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890822559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b839e658c60f61f468fb7a66f025f655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyMaxHP: 100
-  enemyHP: 0
-  playerInRange: 0
---- !u!50 &1890822568
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890822559}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &2056307684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,3 +1696,4 @@ SceneRoots:
   - {fileID: 1145027119}
   - {fileID: 860914312}
   - {fileID: 279424292}
+  - {fileID: 1560962113}

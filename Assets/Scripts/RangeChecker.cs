@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RangeChecker : MonoBehaviour
 {
+
+    public Enemy enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,16 @@ public class RangeChecker : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        enemy.playerInRange = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        enemy.playerInRange = false;
     }
 }
