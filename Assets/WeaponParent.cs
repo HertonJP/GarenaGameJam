@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WeaponParent : MonoBehaviour
 {
+
+
+    public Vector2 Pointerposition { get; set; }
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,6 @@ public class WeaponParent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.right = (Pointerposition - (Vector2)transform.position).normalized;
     }
 }
