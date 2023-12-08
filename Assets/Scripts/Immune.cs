@@ -7,7 +7,6 @@ public class Immune : MonoBehaviour
     public float immuneDuration;
     public float immuneInterval;
     public bool isImmune;
-    public bool canImmune = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +16,6 @@ public class Immune : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!canImmune)
-            return;
-
         while (true)
         {
             if (!isImmune)

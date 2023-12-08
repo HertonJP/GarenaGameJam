@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class Talent_DoubleDamageChance : TalentBase
 {
     // Start is called before the first frame update
