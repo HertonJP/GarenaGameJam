@@ -16,7 +16,7 @@ public class FlipCheck : MonoBehaviour
     {
         if(Camera.main.ScreenToWorldPoint(Input.mousePosition).x> transform.position.x)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            transform.eulerAngles = new Vector3(0, -180, 0);
         }
         else if(Camera.main.ScreenToWorldPoint(Input.mousePosition).x < transform.position.x)
         {
