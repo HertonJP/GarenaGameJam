@@ -14,11 +14,9 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         [Tooltip("If target is null then use the target position")]
         [UnityEngine.Serialization.FormerlySerializedAs("targetPosition")]
         public SharedVector3 m_TargetPosition;
-
         public override void OnStart()
         {
             base.OnStart();
-
             SetDestination(Target());
         }
 
