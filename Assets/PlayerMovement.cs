@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Camera cam;
-    private bool facingRight = false;
     private Animator animator;
     public float moveSpeed = 5f;
 
@@ -23,10 +22,6 @@ public class PlayerMovement : MonoBehaviour
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        if ((movement.x < 0 && facingRight) || (movement.x > 0 && !facingRight))
-        {
-            Flip();
-        }
 
         bool isMoving = movement.magnitude > 0.1f;
         animator.SetBool("isRunning", isMoving);
@@ -48,13 +43,5 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
-    }
-
-    void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 newScale = transform.localScale;
-        newScale.x *= -1;
-        transform.localScale = newScale;
     }
 }

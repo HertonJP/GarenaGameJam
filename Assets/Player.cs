@@ -7,11 +7,9 @@ public class Player : MonoBehaviour
 {
     private Vector2 pointerInput;
     private InputActionReference pointerPosition;
-    private WeaponParent weaponParent;
 
     private void Awake()
     {
-        weaponParent = GetComponentInChildren<WeaponParent>();
     }
     // Start is called before the first frame update
     void Start()
@@ -23,7 +21,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         pointerInput = GetPointerInput();
-        weaponParent.Pointerposition = pointerInput;
     }
 
     private Vector2 GetPointerInput()

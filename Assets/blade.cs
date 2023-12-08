@@ -2,20 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponParent : MonoBehaviour
+public class blade : MonoBehaviour
 {
-
-
-    public Vector2 Pointerposition { get; set; }
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.right = (Pointerposition - (Vector2)transform.position).normalized;
+        
     }
 }
