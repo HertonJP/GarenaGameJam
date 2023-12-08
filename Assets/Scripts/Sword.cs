@@ -13,6 +13,8 @@ public class Sword : MonoBehaviour
 
     [SerializeField] private SpriteRenderer sr;
 
+    [SerializeField] private TalentManager talentManager;
+
     private void Awake()
     {
         Cursor.visible = false;
@@ -42,6 +44,12 @@ public class Sword : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            int doubleDamageChangeTalentIndex = talentManager.CheckTalentTakenIndexByName("DoubleDamageChance");
+            if (doubleDamageChangeTalentIndex!=-1)
+            {
+                talentManager.takenTalents[doubleDamageChangeTalentIndex].talentLogic.ImplementTalent(this);
+            }
+
             Debug.Log("hits");
         }
     }
