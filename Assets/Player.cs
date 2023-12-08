@@ -8,6 +8,15 @@ public class Player : MonoBehaviour
     private Vector2 pointerInput;
     private InputActionReference pointerPosition;
 
+    private void Awake()
+    {
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
