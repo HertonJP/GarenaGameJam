@@ -26,6 +26,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         // Return running if the agent hasn't reached the destination yet
         public override TaskStatus OnUpdate()
         {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             if (HasArrived()) {
                 return TaskStatus.Success;
             }
