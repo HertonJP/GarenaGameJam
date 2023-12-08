@@ -7,12 +7,35 @@ public class Sword : MonoBehaviour
     public SwordDataSO swordData;
     public string swordName_ { get; private set; }
     public float swordDamage_ { get; private set; }
+
+    private Vector3 lastMousePos;
+    private Vector3 currMousePos;
+
     [SerializeField] private SpriteRenderer sr;
+
     private void Awake()
     {
         Cursor.visible = false;
         sr = GetComponent<SpriteRenderer>();
         InitData();
+    }
+
+    private void Start()
+    {
+        currMousePos = Input.mousePosition;
+    }
+
+    private void Update()
+    {
+        if (Input.mousePosition != currMousePos)
+        {
+            GetComponent<Collider2D>().enabled = true;
+            currMousePos = lastMousePos;
+            currMousePos = Input.mousePosition;
+        }else if(Input.mousePosition == currMousePos)
+        {
+            GetComponent<Collider2D>().enabled = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
