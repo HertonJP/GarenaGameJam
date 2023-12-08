@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Immune
   m_EditorClassIdentifier: 
   talentSprite: {fileID: 0}
-  talentName: 
-  talentDescription: 
-  talentLogic: {fileID: 0}
+  talentName: Immune
+  talentDescription: Player becomes immune for 1.5s every 10s
   isTaken: 0

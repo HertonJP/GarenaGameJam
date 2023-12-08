@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class Talent_DoubleDamageChance : TalentBase
+public class Talent_DoubleDamageChance : TalentSO
 {
     // Start is called before the first frame update
     [SerializeField] private float doubleDamageChance;
