@@ -17,13 +17,13 @@ public class TalentManager : MonoBehaviour
         
     }
 
-    public bool CheckTalentTaken(string TalentName)
+    public int CheckTalentTakenIndexByName(string talentName)
     {
-        foreach(TalentSO t in takenTalents)
+        for(int i=0;  i<3;i++)
         {
-            if (t.isTaken)
-                return true;
+            if (takenTalents[i].talentName == talentName)
+                return i;
         }
-        return false;
+        return -1;
     }
 }
