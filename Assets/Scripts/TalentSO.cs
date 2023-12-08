@@ -8,6 +8,5 @@ public class TalentSO : ScriptableObject
     public Sprite talentSprite;
     public string talentName;
     public string talentDescription;
-    public TalentBase talentLogic;
-    public bool isTaken;
+    public IImplementTalent talentLogic;
 }
