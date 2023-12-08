@@ -6,7 +6,7 @@ public class Sword : MonoBehaviour
 {
     public SwordDataSO swordData;
     public string swordName_ { get; private set; }
-    public float swordDamage_ { get; private set; }
+    public int swordDamage_ { get; private set; }
 
     private Vector3 lastMousePos;
     private Vector3 currMousePos;
@@ -44,17 +44,17 @@ public class Sword : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            int doubleDamageChangeTalentIndex = talentManager.CheckTalentTakenIndexByName("DoubleDamageChance");
-            if (doubleDamageChangeTalentIndex!=-1)
-            {
-                talentManager.takenTalents[doubleDamageChangeTalentIndex].ImplementTalent(this);
-            }
-
+            //int doubleDamageChangeTalentIndex = talentManager.CheckTalentTakenIndexByName("DoubleDamageChance");
+            //if (doubleDamageChangeTalentIndex!=-1)
+           // {
+             //   talentManager.takenTalents[doubleDamageChangeTalentIndex].talentLogic.ImplementTalent(this);
+           // }
+            collision.GetComponent<Enemy>().TakeDamage(10);
             Debug.Log("hits");
         }
     }
     
-    public void SetSwordDamage(float newDamage)
+    public void SetSwordDamage(int newDamage)
     {
         swordDamage_ = newDamage;
     }
