@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
+    public SwordDataSO swordData;
+    public string swordName_ { get; private set; }
+    public float swordDamage_ { get; private set; }
+    [SerializeField] private SpriteRenderer sr;
     private void Awake()
     {
         Cursor.visible = false;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        sr = GetComponent<SpriteRenderer>();
+        InitData();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,5 +21,17 @@ public class Sword : MonoBehaviour
         {
             Debug.Log("hits");
         }
+    }
+    
+    public void SetSwordDamage(float newDamage)
+    {
+        swordDamage_ = newDamage;
+    }
+
+    private void InitData()
+    {
+        swordDamage_ = swordData.swordDamage;
+        swordName_ = swordData.swordName;
+        sr.sprite = swordData.swordSprite;
     }
 }
