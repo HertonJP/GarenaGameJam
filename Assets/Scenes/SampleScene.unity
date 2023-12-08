@@ -1650,6 +1650,7 @@ MonoBehaviour:
   enemyMaxHP: 100
   enemyHP: 0
   playerInRange: 0
+  floatingTextPrefab: {fileID: 4452427290877172559, guid: 57631cb5d9b9ada4b8a336801e709e03, type: 3}
 --- !u!50 &1890822568
 Rigidbody2D:
   serializedVersion: 4

@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public int enemyHP;
     public bool playerInRange = false;
     private Animator anim;
+    [SerializeField] private GameObject floatingTextPrefab;
+    private bool isShowingText = false;
 
     void Start()
     {
@@ -32,11 +34,34 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         enemyHP -= damage;
+        ShowFloatingText(damage.ToString());
     }
 
     private void Die()
     {
         Debug.Log("Mati");
+    }
+
+    private IEnumerator DestroyWithDelay(float delay)
+    {
+        if (isShowingText)
+        {
+            yield return new WaitForSeconds(delay);
+            Destroy(gameObject);
+        }
+    }
+
+    private void ShowFloatingText(string text)
+    {
+        if (floatingTextPrefab != null)
+        {
+            GameObject floatingText = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
+            FloatingTextController textController = floatingText.GetComponent<FloatingTextController>();
+            if (textController != null)
+            {
+                textController.Init(text);
+            }
+        }
     }
 
 }
