@@ -14,7 +14,6 @@ public class BladeRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         transform.localEulerAngles = new Vector3(transform.localRotation.x, transform.localRotation.y, -Camera.main.ScreenToWorldPoint(Input.mousePosition).y * swordSwingSpeed);
     }
 }
