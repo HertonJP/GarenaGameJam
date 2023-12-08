@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class Sword : MonoBehaviour
 {
     public SwordDataSO swordData;
@@ -47,7 +47,7 @@ public class Sword : MonoBehaviour
             int doubleDamageChangeTalentIndex = talentManager.CheckTalentTakenIndexByName("DoubleDamageChance");
             if (doubleDamageChangeTalentIndex!=-1)
             {
-                talentManager.takenTalents[doubleDamageChangeTalentIndex].talentLogic.ImplementTalent(this);
+                talentManager.takenTalents[doubleDamageChangeTalentIndex].ImplementTalent(this);
             }
 
             Debug.Log("hits");

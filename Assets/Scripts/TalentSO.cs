@@ -8,6 +8,14 @@ public class TalentSO : ScriptableObject
     public Sprite talentSprite;
     public string talentName;
     public string talentDescription;
-    public TalentBase talentLogic;
     public bool isTaken;
+
+    public virtual void ImplementTalent()
+    {
+
+    }
+    public virtual void ImplementTalent(Sword sword)
+    {
+
+    }
 }

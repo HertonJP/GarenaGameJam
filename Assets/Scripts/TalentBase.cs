@@ -1,15 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public abstract class TalentBase : MonoBehaviour
 {
-    public virtual void ImplementTalent()
-    {
 
-    }
-    public virtual void ImplementTalent(Sword sword)
-    {
-
-    }
 }
