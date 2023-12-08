@@ -7,6 +7,8 @@ public class Immune : MonoBehaviour
     public float immuneDuration;
     public float immuneInterval;
     public bool isImmune;
+    bool hasStartInterval;
+    bool hasStartImmune;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,29 +18,38 @@ public class Immune : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (true)
-        {
-            if (!isImmune)
-            {
+        if (!isImmune)
+        {   
+            if(!hasStartInterval)
                 StartCoroutine(ImmuneIntervalDuration());
-            }
-            else
+        }
+        else
+        {
+            if (!hasStartImmune)
             {
                 GetComponent<PlayerStats>().canBeDamaged = false;
+                GetComponent<SpriteRenderer>().color = Color.red;
                 StartCoroutine(ImmuneDuration());
             }
         }
     }
     private IEnumerator ImmuneDuration()
     {
+        hasStartImmune = true;
+        Debug.Log("b");
         yield return new WaitForSeconds(immuneDuration);
-        isImmune = false;
+        GetComponent<SpriteRenderer>().color = Color.white;
         GetComponent<PlayerStats>().canBeDamaged = true;
+        isImmune = false;
+        hasStartImmune = false;
     }
 
     private IEnumerator ImmuneIntervalDuration()
     {
+        hasStartInterval = true;
+        Debug.Log("a");
         yield return new WaitForSeconds(immuneInterval);
         isImmune = true;
+        hasStartInterval = false;
     }
 }
