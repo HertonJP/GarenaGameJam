@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class Talent_Immune : TalentBase
+public class Talent_Immune : TalentSO
 {
     public GameObject player;
 
