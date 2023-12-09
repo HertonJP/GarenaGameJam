@@ -196,8 +196,8 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.7
-  gizmoViewMode: 2
-  showBehaviorDesignerGizmo: 1
+  gizmoViewMode: 0
+  showBehaviorDesignerGizmo: 0
 --- !u!114 &5407663588929337144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b839e658c60f61f468fb7a66f025f655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMaxHP: 100
+  enemyMaxHP: 20
   enemyHP: 0
   playerInRange: 0
   floatingTextPrefab: {fileID: 4452427290877172559, guid: 57631cb5d9b9ada4b8a336801e709e03, type: 3}

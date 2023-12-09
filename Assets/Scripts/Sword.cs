@@ -44,6 +44,7 @@ public class Sword : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            Debug.Log("hit");
             if (talentManager.takenTalents[0] != null && talentManager.CheckTalentTakenIndexByName("DoubleDamageChance") != -1)
             {
                 GetComponent<Talent_DoubleDamageChance>().ImplementTalent(this);
