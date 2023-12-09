@@ -9,10 +9,14 @@ public class PlayerStats : MonoBehaviour
     public int playerDamage = 10;
     public bool canBeDamaged = true;
     public TalentManager talentManager;
+    private Coin coin;
+    private Score score;
 
     // Start is called before the first frame update
     void Start()
     {
+        score = GameObject.Find("Manager").GetComponent<Score>();
+        coin = GameObject.Find("Manager").GetComponent<Coin>();
         playerHP = playerMaxHP;
         if (talentManager.CheckTalentTakenIndexByName("Immune") != -1)
         {
@@ -23,8 +27,14 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (playerHP <= 0)
+        {
+            playerHP = 0;
+            coin.coin += score.score / 10;
+            PlayerPrefs.SetInt("Coin", coin.coin);
+        }
     }
+
 
     public void TakeDamage(int damageRecieved)
     {
