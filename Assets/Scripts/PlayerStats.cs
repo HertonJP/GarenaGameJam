@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public int playerMaxHP = 100;
@@ -11,14 +11,14 @@ public class PlayerStats : MonoBehaviour
     public TalentManager talentManager;
     private Coin coin;
     private Score score;
-
+    public Image healthbar;
     // Start is called before the first frame update
     void Start()
     {
         score = GameObject.Find("Manager").GetComponent<Score>();
         coin = GameObject.Find("Manager").GetComponent<Coin>();
         playerHP = playerMaxHP;
-
+        healthbar.fillAmount = playerHP / playerMaxHP;
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class PlayerStats : MonoBehaviour
             playerHP = 0;
             coin.coin += score.score / 10;
             PlayerPrefs.SetInt("Coin", coin.coin);
-            Invoke("Die", 2f);
+            Invoke("Die", .5f);
         }
     }
 
@@ -44,5 +44,6 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int damageRecieved)
     {
         playerHP -= damageRecieved;
+        healthbar.fillAmount = (float)playerHP / playerMaxHP;
     }
 }

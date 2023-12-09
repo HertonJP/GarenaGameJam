@@ -23,8 +23,11 @@ public class enemyAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerStats player = collision.GetComponent<PlayerStats>();
-        player.TakeDamage(enemyDamage);
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerStats>().TakeDamage(enemyDamage);
+        }
+
     }
     // Update is called once per frame
     void Update()
