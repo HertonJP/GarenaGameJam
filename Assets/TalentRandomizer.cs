@@ -28,30 +28,43 @@ public class TalentRandomizer : MonoBehaviour
 
     public void TalentButtonClicked(ButtonData data)
     {
-        for(int i=0; i < talentList.Count; i++)
+        if (currSlot < 3)
         {
-            if(talentList[i].talentName == data.skillName)
+            for (int i = 0; i < talentList.Count; i++)
             {
-                talentManager.takenTalents[currSlot] = talentList[i];
+                if (talentList[i].talentName == data.skillName)
+                {
+                    talentManager.takenTalents[currSlot] = talentList[i];
+                }
             }
+            currSlot++;
         }
-        currSlot++;
+        else
+        {
+            return;
+        }
+
+
+        
         pickTalentUI.SetActive(false);
     }
     
     private void RandomizeTalent()
     {
-        talentListCopy.Clear();
-        talentListCopy.AddRange(talentList);
-        for (int i = 0; i < 3; i++)
+        if (currSlot < 3)
         {
-            int randomizedResult = Random.Range(0, talentListCopy.Count);
-            randomizedTalentList[i] = talentListCopy[randomizedResult];
-            talentListCopy.RemoveAt(randomizedResult);
-            talentButtons[i].transform.GetChild(0).GetComponent<Image>().sprite = randomizedTalentList[i].talentSprite;
-            talentButtons[i].transform.GetChild(1).GetComponent<TMP_Text>().text = randomizedTalentList[i].talentName;
-            talentButtons[i].transform.GetChild(2).GetComponent<TMP_Text>().text = randomizedTalentList[i].talentDescription;
-            talentButtons[i].GetComponent<ButtonData>().skillName = randomizedTalentList[i].talentName;
+            talentListCopy.Clear();
+            talentListCopy.AddRange(talentList);
+            for (int i = 0; i < 3; i++)
+            {
+                int randomizedResult = Random.Range(0, talentListCopy.Count);
+                randomizedTalentList[i] = talentListCopy[randomizedResult];
+                talentListCopy.RemoveAt(randomizedResult);
+                talentButtons[i].transform.GetChild(0).GetComponent<Image>().sprite = randomizedTalentList[i].talentSprite;
+                talentButtons[i].transform.GetChild(1).GetComponent<TMP_Text>().text = randomizedTalentList[i].talentName;
+                talentButtons[i].transform.GetChild(2).GetComponent<TMP_Text>().text = randomizedTalentList[i].talentDescription;
+                talentButtons[i].GetComponent<ButtonData>().skillName = randomizedTalentList[i].talentName;
+            }
         }
     }
 
