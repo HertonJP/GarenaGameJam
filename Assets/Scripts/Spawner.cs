@@ -69,7 +69,7 @@ public class Spawner : MonoBehaviour
 
     private void EndWave()
     {
-        if(currentWave != 0 && currentWave != 1)
+        if(currentWave == 3 || currentWave == 6|| currentWave == 9 )
         {
             talentPanel.SetActive(true);
         }
