@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talentSprite: {fileID: 1162410020, guid: b0e4f5756c09fab47b9e62fdae95b7b4, type: 3}
   talentName: DoubleDamageChance
-  talentDescription: Chance to deal double damage.
+  talentDescription: a x% chance to deal double damage of your sword
   isTaken: 0

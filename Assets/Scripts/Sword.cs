@@ -52,6 +52,7 @@ public class Sword : MonoBehaviour
         {
             
             GetComponent<Collider2D>().enabled = false;
+            Debug.Log("Disable Collider");
         }
     }
 
