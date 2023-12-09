@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 79354419}
   - component: {fileID: 79354418}
   - component: {fileID: 79354417}
+  - component: {fileID: 79354420}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -312,10 +313,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1878613659}
         m_TargetAssemblyTypeName: TalentRandomizer, Assembly-CSharp
         m_MethodName: TalentButtonClicked
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 79354420}
+          m_ObjectArgumentAssemblyTypeName: ButtonData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -359,6 +360,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79354415}
   m_CullTransparentMesh: 1
+--- !u!114 &79354420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79354415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e6d02ed74b0c34d997a857e23c9fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: 
 --- !u!1 &109490812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,6 +2356,7 @@ GameObject:
   - component: {fileID: 1381112460}
   - component: {fileID: 1381112459}
   - component: {fileID: 1381112458}
+  - component: {fileID: 1381112461}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -2418,10 +2433,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1878613659}
         m_TargetAssemblyTypeName: TalentRandomizer, Assembly-CSharp
         m_MethodName: TalentButtonClicked
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1381112461}
+          m_ObjectArgumentAssemblyTypeName: ButtonData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2465,6 +2480,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381112456}
   m_CullTransparentMesh: 1
+--- !u!114 &1381112461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381112456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e6d02ed74b0c34d997a857e23c9fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: 
 --- !u!1 &1390563241
 GameObject:
   m_ObjectHideFlags: 0
@@ -3496,7 +3524,7 @@ MonoBehaviour:
   - {fileID: 79354415}
   - {fileID: 1381112456}
   - {fileID: 1994586278}
-  talentIndexList: 
+  talentStringList: []
   pickTalentUI: {fileID: 1878613655}
 --- !u!1 &1993549727
 GameObject:
@@ -3549,8 +3577,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talentManager: {fileID: 1800129006}
   toxinDamage: 1
-  currToxinDuration: 1
+  toxinDuration: 5
+  currToxinDuration: 5
+  toxicInterval: 1
   targetEnemy: {fileID: 0}
+  isDealing: 0
 --- !u!114 &1993549730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3563,7 +3594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26fc56a6509340042aa563a1bf895b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doubleDamageChance: 0
+  doubleDamageChance: 30
   randomResult: 0
   isDoubleDamage: 0
 --- !u!60 &1993549731
@@ -3725,6 +3756,7 @@ GameObject:
   - component: {fileID: 1994586282}
   - component: {fileID: 1994586281}
   - component: {fileID: 1994586280}
+  - component: {fileID: 1994586283}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -3801,10 +3833,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1878613659}
         m_TargetAssemblyTypeName: TalentRandomizer, Assembly-CSharp
         m_MethodName: TalentButtonClicked
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1994586283}
+          m_ObjectArgumentAssemblyTypeName: ButtonData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3848,6 +3880,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994586278}
   m_CullTransparentMesh: 1
+--- !u!114 &1994586283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994586278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e6d02ed74b0c34d997a857e23c9fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: 
 --- !u!1 &2056307684
 GameObject:
   m_ObjectHideFlags: 0

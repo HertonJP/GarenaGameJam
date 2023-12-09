@@ -6,9 +6,11 @@ public class Talent_Toxin : MonoBehaviour
 {
     [SerializeField] private TalentManager talentManager;
     [SerializeField] private int toxinDamage;
-     private float toxinDuration;
+    [SerializeField] private float toxinDuration;
     [SerializeField] private float currToxinDuration;
+    [SerializeField] private float toxicInterval;
     public Enemy targetEnemy;
+    public bool isDealing;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,16 +19,23 @@ public class Talent_Toxin : MonoBehaviour
 
     public void Update()
     {
-        toxinDuration -= Time.deltaTime;
-
         if (toxinDuration > 0 && targetEnemy != null)
         {
-            currToxinDuration -= Time.deltaTime;
-            targetEnemy.TakeDamage(toxinDamage);
+            if(!isDealing)
+                StartCoroutine(DealToxicDamage());
         }
         else
         {
             currToxinDuration = toxinDuration;
+            this.enabled = false;
         }
+    }
+    
+    private IEnumerator DealToxicDamage()
+    {
+        isDealing = true;
+        yield return new WaitForSeconds(toxicInterval);
+        targetEnemy.TakeDamage(toxinDamage);
+        isDealing = false;
     }
 }

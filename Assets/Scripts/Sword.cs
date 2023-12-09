@@ -54,7 +54,7 @@ public class Sword : MonoBehaviour
                 GetComponent<Talent_Toxin>().enabled = true;
             }
             collision.GetComponent<Enemy>().TakeDamage(swordDamage_);
-            Debug.Log("hits");
+            swordDamage_ = swordData.swordDamage;
         }
     }
     
