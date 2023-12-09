@@ -13,9 +13,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject floatingTextPrefab;
     private Transform target;
     [SerializeField] private Collider2D attackColl;
-
+    private Spawner spawner;
     void Start()
     {
+        spawner = GameObject.Find("Manager").GetComponent<Spawner>();
         target = GameObject.Find("Hero").transform;
         score = GameObject.Find("Manager").GetComponent<Score>();
         enemyHP = enemyMaxHP;
@@ -70,6 +71,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         Debug.Log("Mati");
+        spawner.enemiesAlive--;
         score.score += 10;
     }
 

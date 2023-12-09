@@ -8044,9 +8044,10 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 6873971431119117240, guid: 8f82aac6b6ebaeb419176f1e708441e7, type: 3}
   - {fileID: 6873971431119117240, guid: 887325d4ba2e4584497527c8d80cb5d8, type: 3}
+  - {fileID: 6873971431119117240, guid: 1adf8bc215a045b428eb516490da9648, type: 3}
   baseEnemies: 3
   enemiesPerSecond: 1
-  timeBetweenWaves: 10
+  timeBetweenWaves: 1
   difficultyScalingFactor: 0.75
   spawnPoints:
   - {fileID: 1380049633}

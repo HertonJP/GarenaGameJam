@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private int baseEnemies = 3;
     [SerializeField] private float enemiesPerSecond = 1f;
-    [SerializeField] private float timeBetweenWaves = 10f;
+    [SerializeField] private float timeBetweenWaves = 1f;
     [SerializeField] private float difficultyScalingFactor = 0.75f;
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private int wavesUntilStatIncrease = 5;
@@ -22,8 +22,8 @@ public class Spawner : MonoBehaviour
 
     public int currentWave = 1;
     private float timeSinceLastSpawn;
-    private int enemiesAlive;
-    private int enemiesLeftToSpawn;
+    public int enemiesAlive;
+    public int enemiesLeftToSpawn;
     private bool isSpawning = false;
 
     private void Awake()
