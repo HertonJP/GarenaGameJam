@@ -60,7 +60,7 @@ public class Spawner : MonoBehaviour
             enemiesAlive++;
             timeSinceLastSpawn = 0f;
         }
-        if (enemiesLeftToSpawn == 0)
+        if (enemiesLeftToSpawn == 0 && enemiesAlive <= 0)
         {
             EndWave();
         }
