@@ -269,7 +269,7 @@ MonoBehaviour:
     m_Bits: 64
   projectilesPrefab: {fileID: 7255590979161118288, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
   firingPoint: {fileID: 74414129979141120}
-  targetingRange: 10
+  targetingRange: 15
   initialAttackSpeed: 3
   attackSpeed: 3
   corpseSprite: {fileID: 0}

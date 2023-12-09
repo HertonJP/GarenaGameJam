@@ -2741,7 +2741,7 @@ GameObject:
   - component: {fileID: 309087284}
   - component: {fileID: 309087283}
   - component: {fileID: 309087282}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7180,7 +7180,7 @@ GameObject:
   - component: {fileID: 763109982}
   - component: {fileID: 763109981}
   - component: {fileID: 763109980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -9289,7 +9289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 980526193}
   - component: {fileID: 980526194}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14231,7 +14231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634700623}
   - component: {fileID: 1634700622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16878,7 +16878,7 @@ GameObject:
   - component: {fileID: 1993549731}
   - component: {fileID: 1993549730}
   - component: {fileID: 1993549729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
