@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private bool isFacingRight = true;
     [SerializeField] private GameObject floatingTextPrefab;
     private Transform target;
+    [SerializeField] private Collider2D attackColl;
 
     void Start()
     {
@@ -21,7 +22,15 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    
+    public void activateCollider()
+    {
+        attackColl.enabled = true;
+    }
+
+    public void deactivateCollider()
+    {
+        attackColl.enabled = false;
+    }
     void Update()
     {
         if (playerInRange)
