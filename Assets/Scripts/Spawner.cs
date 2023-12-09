@@ -60,7 +60,7 @@ public class Spawner : MonoBehaviour
             enemiesAlive++;
             timeSinceLastSpawn = 0f;
         }
-        if (enemiesLeftToSpawn == 0)
+        if (enemiesLeftToSpawn == 0 && enemiesAlive <= 0)
         {
             EndWave();
         }
@@ -71,6 +71,7 @@ public class Spawner : MonoBehaviour
     {
         if(currentWave == 3 || currentWave == 6|| currentWave == 9 )
         {
+            Time.timeScale = 0f;
             talentPanel.SetActive(true);
         }
         
