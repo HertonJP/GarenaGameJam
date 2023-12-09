@@ -19,19 +19,18 @@ public class enemyProjectiles : MonoBehaviour
         initialDirection = direction.normalized;
     }
 
-
-    private void OnTriggerEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerStats player = other.gameObject.GetComponent<PlayerStats>();
-            if (player != null && player.canBeDamaged)
+            PlayerStats player = collision.gameObject.GetComponent<PlayerStats>();
+            if (player != null)
             {
-                other.gameObject.GetComponent<PlayerStats>().TakeDamage(projectilesDamage);
+                collision.gameObject.GetComponent<PlayerStats>().TakeDamage(projectilesDamage);
+                Destroy(gameObject);
             }
         }
 
-        Destroy(gameObject);
-        
     }
+    
 }
