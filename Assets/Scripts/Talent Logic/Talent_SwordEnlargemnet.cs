@@ -9,8 +9,9 @@ public class Talent_SwordEnlargemnet : MonoBehaviour
 
     private void Update()
     {
-        if(talentManager.takenTalents[0] != null && talentManager.CheckTalentTakenIndexByName("Sword Enlargement") != -1)
+        if(talentManager.CheckTalentTakenIndexByName("Magnifier") != -1)
         {
+            Debug.Log("Sword enla");
             Implementation(GetComponent<Sword>());
         }
             

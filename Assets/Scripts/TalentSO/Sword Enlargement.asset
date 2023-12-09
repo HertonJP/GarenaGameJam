@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Sword Enlargement
   m_EditorClassIdentifier: 
   talentSprite: {fileID: -1361677090, guid: b0e4f5756c09fab47b9e62fdae95b7b4, type: 3}
-  talentName: Sword Enlargement
-  talentDescription: Increase sword size
+  talentName: Magnifier
+  talentDescription: Increases sword size.
   isTaken: 0
