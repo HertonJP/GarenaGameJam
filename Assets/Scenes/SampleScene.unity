@@ -309,7 +309,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1878613659}
         m_TargetAssemblyTypeName: TalentRandomizer, Assembly-CSharp
         m_MethodName: TalentButtonClicked
         m_Mode: 1
@@ -2415,7 +2415,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1878613659}
         m_TargetAssemblyTypeName: TalentRandomizer, Assembly-CSharp
         m_MethodName: TalentButtonClicked
         m_Mode: 1
@@ -3798,7 +3798,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1878613659}
         m_TargetAssemblyTypeName: TalentRandomizer, Assembly-CSharp
         m_MethodName: TalentButtonClicked
         m_Mode: 1
