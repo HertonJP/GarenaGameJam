@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Immune
   m_EditorClassIdentifier: 
   talentSprite: {fileID: -748395826, guid: b0e4f5756c09fab47b9e62fdae95b7b4, type: 3}
-  talentName: Immune
-  talentDescription: Player becomes immune for 1.5s every 10s
+  talentName: Shield
+  talentDescription: Become immune briefly every 10 sec
   isTaken: 0

@@ -52,7 +52,7 @@ public class Sword : MonoBehaviour
         {
             
             GetComponent<Collider2D>().enabled = false;
-            Debug.Log("Disable Collider");
+            //Debug.Log("Disable Collider");
         }
     }
 
@@ -61,7 +61,7 @@ public class Sword : MonoBehaviour
         if (collision.CompareTag("Enemy") && !isOnCoolDown)
         {
             Debug.Log("hit");
-            if (talentManager.takenTalents[0] != null && talentManager.CheckTalentTakenIndexByName("DoubleDamageChance") != -1)
+            if (talentManager.takenTalents[0] != null && talentManager.CheckTalentTakenIndexByName("Bullet") != -1)
             {
                 GetComponent<Talent_DoubleDamageChance>().ImplementTalent(this);
             }
