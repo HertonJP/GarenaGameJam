@@ -8,10 +8,12 @@ public class Enemy : MonoBehaviour
     public int enemyHP;
     public bool playerInRange = false;
     private Animator anim;
+    private Score score;
     [SerializeField] private GameObject floatingTextPrefab;
 
     void Start()
     {
+        score = GameObject.Find("Manager").GetComponent<Score>();
         enemyHP = enemyMaxHP;
         anim = GetComponent<Animator>();
     }
@@ -39,6 +41,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         Debug.Log("Mati");
+        score.score += 10;
     }
 
 

@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private int wavesUntilStatIncrease = 5;
     public int wavesCompleted = 0;
-    //private TextMeshProUGUI waveText;
+    private TextMeshProUGUI waveText;
 
     public static UnityEvent onEnemyDestroy = new UnityEvent();
 
@@ -38,7 +38,8 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        //waveText = GameObject.Find("Current Wave Text").GetComponent<TextMeshProUGUI>();
+        waveText = GameObject.Find("WaveText").GetComponent<TextMeshProUGUI>();
+        waveText.text = "Current Wave: " + currentWave.ToString();
         StartCoroutine(StartWave());
     }
 
@@ -61,7 +62,7 @@ public class Spawner : MonoBehaviour
         {
             EndWave();
         }
-        //waveText.text = "Current Wave: " + currentWave.ToString();
+        waveText.text = "Current Wave: " + currentWave.ToString();
     }
 
     private void EndWave()
