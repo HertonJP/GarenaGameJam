@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 [System.Serializable]
 public class Sword : MonoBehaviour
 {
@@ -55,6 +56,7 @@ public class Sword : MonoBehaviour
                 GetComponent<Talent_Toxin>().enabled = true;
             }
             collision.GetComponent<Enemy>().TakeDamage(swordDamage_);
+            Camera.main.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
             swordDamage_ = swordData.swordDamage;
         }
     }

@@ -44,9 +44,8 @@ public class TalentRandomizer : MonoBehaviour
             return;
         }
 
-
-        
         pickTalentUI.SetActive(false);
+        Time.timeScale = 1;
     }
     
     private void RandomizeTalent()
