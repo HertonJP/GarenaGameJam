@@ -14,6 +14,7 @@ public class TalentRandomizer : MonoBehaviour
     [SerializeField] private List<GameObject> talentButtons = new();
     [SerializeField] private List<string> talentStringList = new();
     [SerializeField] private GameObject pickTalentUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,8 @@ public class TalentRandomizer : MonoBehaviour
                 if (talentList[i].talentName == data.skillName)
                 {
                     talentManager.takenTalents[currSlot] = talentList[i];
+                    talentManager.pickedTalentUI[currSlot].sprite = talentList[i].talentSprite;
+                    talentManager.pickedTalentUI[currSlot].color =new Color(255,255,255,255);
                 }
             }
             currSlot++;
