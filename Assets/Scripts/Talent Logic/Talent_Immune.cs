@@ -8,7 +8,7 @@ public class Talent_Immune : MonoBehaviour
     public TalentManager talentManager;
     private void Update()
     {
-        if (talentManager.CheckTalentTakenIndexByName("Immune") != -1)
+        if (talentManager.takenTalents[0] != null && talentManager.CheckTalentTakenIndexByName("Immune") != -1)
         {
             ImplementTalent();
         }

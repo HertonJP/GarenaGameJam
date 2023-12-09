@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public Camera cam;
+    //public Camera cam;
     private Animator animator;
     public float moveSpeed = 5f;
 
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
         bool isMoving = movement.magnitude > 0.1f;
         animator.SetBool("isRunning", isMoving);
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+       // mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
 

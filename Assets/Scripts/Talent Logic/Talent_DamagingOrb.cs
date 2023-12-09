@@ -14,7 +14,7 @@ public class Talent_DamagingOrb : MonoBehaviour
 
     private void Update()
     {
-        if (talentManager.CheckTalentTakenIndexByName("Damaging Orb") != -1)
+        if (talentManager.takenTalents[0] != null && talentManager.CheckTalentTakenIndexByName("Damaging Orb") != -1)
         {
             orbPivot.SetActive(true);
         }

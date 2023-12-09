@@ -44,16 +44,16 @@ public class Sword : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            if (talentManager.CheckTalentTakenIndexByName("DoubleDamageChance") != -1)
+            if (talentManager.takenTalents[0] != null && talentManager.CheckTalentTakenIndexByName("DoubleDamageChance") != -1)
             {
                 GetComponent<Talent_DoubleDamageChance>().ImplementTalent(this);
             }
-            if (talentManager.CheckTalentTakenIndexByName("Toxin") != -1)
+            if (talentManager.takenTalents[0] != null && talentManager.CheckTalentTakenIndexByName("Toxin") != -1)
             {
                 GetComponent<Talent_Toxin>().targetEnemy = collision.GetComponent<Enemy>();
                 GetComponent<Talent_Toxin>().enabled = true;
             }
-            collision.GetComponent<Enemy>().TakeDamage(10);
+            collision.GetComponent<Enemy>().TakeDamage(swordDamage_);
             Debug.Log("hits");
         }
     }
