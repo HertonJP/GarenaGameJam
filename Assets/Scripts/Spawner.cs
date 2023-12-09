@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
 
     public static UnityEvent onEnemyDestroy = new UnityEvent();
 
-    public int currentWave = 0;
+    public int currentWave = 1;
     private float timeSinceLastSpawn;
     private int enemiesAlive;
     private int enemiesLeftToSpawn;

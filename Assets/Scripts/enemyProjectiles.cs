@@ -19,7 +19,8 @@ public class enemyProjectiles : MonoBehaviour
         initialDirection = direction.normalized;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+
+    private void OnTriggerEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {

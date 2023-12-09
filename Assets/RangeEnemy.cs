@@ -6,12 +6,10 @@ public class RangeEnemy : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private GameObject projectilesPrefab;
     [SerializeField] private Transform firingPoint;
-    [SerializeField] public int initialEnemyHP = 20;
-    public int enemyHP;
     private bool isDead = false;
     private Animator animator;
 
-    [SerializeField] private float targetingRange = 3f;
+    [SerializeField] private float targetingRange = 11f;
     [SerializeField] public float initialAttackSpeed = 1f;
     public float attackSpeed;
 
@@ -19,13 +17,10 @@ public class RangeEnemy : MonoBehaviour
 
     private Transform target;
     private float timeUntilFire;
-    private AudioSource attackSFX;
 
     private void Start()
     {
-        attackSFX = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
-        enemyHP = initialEnemyHP;
         attackSpeed = initialAttackSpeed;
     }
 
@@ -69,7 +64,6 @@ public class RangeEnemy : MonoBehaviour
 
         enemyProjectiles projectilesScript = projectilesObj.GetComponent<enemyProjectiles>();
         projectilesScript.SetInitialDirection(directionToPlayer);
-        attackSFX.Play();
     }
 
     private bool inRange()

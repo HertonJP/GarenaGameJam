@@ -2086,72 +2086,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8449421, y: 1.2002163}
   m_EdgeRadius: 0
---- !u!1001 &209461556
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2416704922617397880, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.600634
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416704922617397880, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -11.202593
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416704922617397880, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416704922617397880, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416704922617397880, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416704922617397880, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416704922617397880, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416704922617397880, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416704922617397880, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416704922617397880, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255590979161118288, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      propertyPath: m_Name
-      value: Projectile
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7255590979161118288, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1414609527}
-    - targetCorrespondingSourceObject: {fileID: 7255590979161118288, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1414609526}
-    - targetCorrespondingSourceObject: {fileID: 7255590979161118288, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1414609525}
-  m_SourcePrefab: {fileID: 100100000, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
 --- !u!1 &217596414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,7 +2741,7 @@ GameObject:
   - component: {fileID: 309087284}
   - component: {fileID: 309087283}
   - component: {fileID: 309087282}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7096,7 +7030,7 @@ GameObject:
   - component: {fileID: 763109982}
   - component: {fileID: 763109981}
   - component: {fileID: 763109980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -7129,7 +7063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e664e2f439ff0c448ab8e86853291ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMaxHP: 100
+  playerMaxHP: 1000
   playerHP: 0
   playerDamage: 10
   canBeDamaged: 1
@@ -9205,7 +9139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 980526193}
   - component: {fileID: 980526194}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12154,88 +12088,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1414609524 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7255590979161118288, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
-  m_PrefabInstance: {fileID: 209461556}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1414609525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414609524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57f07d4ee6f8a6649a7a6451a68dfd78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 1414609527}
-  projectilesSpeed: 5
-  projectilesDamage: 5
---- !u!58 &1414609526
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414609524}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.6
---- !u!50 &1414609527
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414609524}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &1417364523
 GameObject:
   m_ObjectHideFlags: 0
@@ -14229,7 +14081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634700623}
   - component: {fileID: 1634700622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16874,7 +16726,7 @@ GameObject:
   - component: {fileID: 1993549731}
   - component: {fileID: 1993549730}
   - component: {fileID: 1993549729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18220,4 +18072,3 @@ SceneRoots:
   - {fileID: 20209597}
   - {fileID: 1120182957}
   - {fileID: 492084924}
-  - {fileID: 209461556}
