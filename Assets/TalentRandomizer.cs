@@ -12,7 +12,7 @@ public class TalentRandomizer : MonoBehaviour
     [SerializeField] private List<TalentSO> talentListCopy = new();
     [SerializeField] private List<TalentSO> randomizedTalentList = new();
     [SerializeField] private List<GameObject> talentButtons = new();
-    [SerializeField] private List<int> talentIndexList = new();
+    [SerializeField] private List<string> talentStringList = new();
     [SerializeField] private GameObject pickTalentUI;
     // Start is called before the first frame update
     void Start()
@@ -26,17 +26,15 @@ public class TalentRandomizer : MonoBehaviour
         
     }
 
-    public void TalentButtonClicked()
+    public void TalentButtonClicked(ButtonData data)
     {
-        talentManager.takenTalents[currSlot] = randomizedTalentList[currSlot];
         for(int i=0; i < talentList.Count; i++)
         {
-            if(talentList[i].talentName == talentManager.takenTalents[currSlot].talentName)
+            if(talentList[i].talentName == data.skillName)
             {
-                talentList.RemoveAt(i);
+                talentManager.takenTalents[currSlot] = talentList[i];
             }
         }
-        
         currSlot++;
         pickTalentUI.SetActive(false);
     }
@@ -48,12 +46,57 @@ public class TalentRandomizer : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             int randomizedResult = Random.Range(0, talentListCopy.Count);
-            talentIndexList.Add(randomizedResult);
             randomizedTalentList[i] = talentListCopy[randomizedResult];
             talentListCopy.RemoveAt(randomizedResult);
             talentButtons[i].transform.GetChild(0).GetComponent<Image>().sprite = randomizedTalentList[i].talentSprite;
             talentButtons[i].transform.GetChild(1).GetComponent<TMP_Text>().text = randomizedTalentList[i].talentName;
             talentButtons[i].transform.GetChild(2).GetComponent<TMP_Text>().text = randomizedTalentList[i].talentDescription;
+            talentButtons[i].GetComponent<ButtonData>().skillName = randomizedTalentList[i].talentName;
         }
     }
+
+    //private void AddButtonAction(string talentName, int index)
+    //{
+    //    switch (talentName)
+    //    {
+    //        case "DamagingOrb":
+    //            for(int i=0; i < talentList.Count; i++)
+    //            {
+    //                if (talentList[i].talentName == talentName)
+    //                    talentManager.takenTalents[index] = talentList[i];
+    //            }
+                
+    //            break;
+    //        case "DoubleDamageChance":
+    //            for (int i = 0; i < talentList.Count; i++)
+    //            {
+    //                if (talentList[i].talentName == talentName)
+    //                    talentManager.takenTalents[index] = talentList[i];
+    //            }
+    //            break;
+    //        case "Immune":
+    //            for (int i = 0; i < talentList.Count; i++)
+    //            {
+    //                if (talentList[i].talentName == talentName)
+    //                    talentManager.takenTalents[index] = talentList[i];
+    //            }
+    //            break;
+    //        case "SwordEnlargement":
+    //            for (int i = 0; i < talentList.Count; i++)
+    //            {
+    //                if (talentList[i].talentName == talentName)
+    //                    talentManager.takenTalents[index] = talentList[i];
+    //            }
+    //            break;
+    //        case "Toxin":
+    //            for (int i = 0; i < talentList.Count; i++)
+    //            {
+    //                if (talentList[i].talentName == talentName)
+    //                    talentManager.takenTalents[index] = talentList[i];
+    //            }
+    //            break;
+    //        default:
+    //            break;
+    //    }
+    //}
 }

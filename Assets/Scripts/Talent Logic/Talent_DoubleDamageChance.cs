@@ -12,6 +12,10 @@ public class Talent_DoubleDamageChance : MonoBehaviour
     {
         randomResult = Random.Range(0f, 99f);
         if (randomResult <= doubleDamageChance)
+        {
             playerSword.SetSwordDamage(2 * playerSword.swordDamage_);
+            Debug.Log(playerSword.swordDamage_);
+        }
+            
     }
 }

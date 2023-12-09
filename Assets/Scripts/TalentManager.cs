@@ -20,8 +20,10 @@ public class TalentManager : MonoBehaviour
 
     public int CheckTalentTakenIndexByName(string talentName)
     {
-        for(int i=0;  i<1;i++)
+        for(int i=0;  i<3;i++)
         {
+            if (takenTalents[i] == null)
+                return -1;
 
             if (takenTalents[i].talentName == talentName)
                 return i;

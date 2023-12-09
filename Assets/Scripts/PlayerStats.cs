@@ -18,15 +18,16 @@ public class PlayerStats : MonoBehaviour
         score = GameObject.Find("Manager").GetComponent<Score>();
         coin = GameObject.Find("Manager").GetComponent<Coin>();
         playerHP = playerMaxHP;
-        if (talentManager.takenTalents[0]!=null&&talentManager.CheckTalentTakenIndexByName("Immune") != -1)
-        {
-            GetComponent<Immune>().enabled = true;
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (talentManager.takenTalents[0] != null && talentManager.CheckTalentTakenIndexByName("Immune") != -1)
+        {
+            GetComponent<Immune>().enabled = true;
+        }
         if (playerHP <= 0)
         {
             playerHP = 0;
