@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private int wavesUntilStatIncrease = 5;
     [SerializeField] private GameObject talentPanel;
+    [SerializeField] private PlayerStats player;
     public int wavesCompleted = 0;
     private TextMeshProUGUI waveText;
 
@@ -71,6 +72,7 @@ public class Spawner : MonoBehaviour
     {
         if(currentWave == 3 || currentWave == 6|| currentWave == 9 )
         {
+            player.playerHP = player.playerMaxHP;
             talentPanel.SetActive(true);
             Time.timeScale = 0;
         }

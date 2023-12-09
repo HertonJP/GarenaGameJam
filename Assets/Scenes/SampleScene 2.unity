@@ -8048,7 +8048,7 @@ MonoBehaviour:
   baseEnemies: 3
   enemiesPerSecond: 1
   timeBetweenWaves: 1
-  difficultyScalingFactor: 0.75
+  difficultyScalingFactor: 0.5
   spawnPoints:
   - {fileID: 1380049633}
   - {fileID: 1507301617}
@@ -8061,8 +8061,11 @@ MonoBehaviour:
   - {fileID: 910242870}
   wavesUntilStatIncrease: 5
   talentPanel: {fileID: 1878613655}
+  player: {fileID: 763109981}
   wavesCompleted: 0
   currentWave: 0
+  enemiesAlive: 0
+  enemiesLeftToSpawn: 0
 --- !u!114 &860914314
 MonoBehaviour:
   m_ObjectHideFlags: 0

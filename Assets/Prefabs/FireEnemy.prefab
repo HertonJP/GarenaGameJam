@@ -270,8 +270,8 @@ MonoBehaviour:
   projectilesPrefab: {fileID: 7255590979161118288, guid: 92dbcfe00a85a9b4e90502ed2dd89732, type: 3}
   firingPoint: {fileID: 74414129979141120}
   targetingRange: 15
-  initialAttackSpeed: 3
-  attackSpeed: 3
+  initialAttackSpeed: 1
+  attackSpeed: 1
   corpseSprite: {fileID: 0}
 --- !u!1 &8061142251530013044
 GameObject:
