@@ -24,6 +24,14 @@ public class Enemy : MonoBehaviour
     
     void Update()
     {
+        if (playerInRange)
+        {
+            anim.SetBool("inRange", true);
+        }
+        if (!playerInRange)
+        {
+            anim.SetBool("inRange", false);
+        }
         Vector2 direction = (target.position - transform.position).normalized;
         if (playerInRange)
         {
