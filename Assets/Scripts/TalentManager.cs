@@ -6,6 +6,7 @@ public class TalentManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public TalentSO[] takenTalents;
+    public bool hasFinishPickTalent;
     void Start()
     {
         
@@ -14,7 +15,7 @@ public class TalentManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public int CheckTalentTakenIndexByName(string talentName)

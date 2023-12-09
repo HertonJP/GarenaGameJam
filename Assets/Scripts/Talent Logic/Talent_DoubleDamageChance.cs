@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[System.Serializable]
-public class Talent_DoubleDamageChance : TalentSO
+
+public class Talent_DoubleDamageChance : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private float doubleDamageChance;
     [SerializeField] private float randomResult;
     public bool isDoubleDamage;
-    public override void ImplementTalent(Sword playerSword)
+    public  void ImplementTalent(Sword playerSword)
     {
         randomResult = Random.Range(0f, 99f);
         if (randomResult <= doubleDamageChance)
