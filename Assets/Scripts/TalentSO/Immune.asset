@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6aa0692d79a944b90a69e660abf49e, type: 3}
   m_Name: Immune
   m_EditorClassIdentifier: 
-  talentSprite: {fileID: 0}
+  talentSprite: {fileID: -748395826, guid: b0e4f5756c09fab47b9e62fdae95b7b4, type: 3}
   talentName: Immune
   talentDescription: Player becomes immune for 1.5s every 10s
   isTaken: 0
