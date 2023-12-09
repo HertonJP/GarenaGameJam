@@ -46,3 +46,6 @@ TagManager:
   - name: Ornaments
     uniqueID: 42903637
     locked: 0
+  - name: Effects
+    uniqueID: 566498409
+    locked: 0
