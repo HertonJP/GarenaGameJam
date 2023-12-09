@@ -17,7 +17,7 @@ public class Sword : MonoBehaviour
 
     private void Awake()
     {
-        Cursor.visible = false;
+       // Cursor.visible = false;
         sr = GetComponent<SpriteRenderer>();
         InitData();
     }
@@ -44,11 +44,15 @@ public class Sword : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            //int doubleDamageChangeTalentIndex = talentManager.CheckTalentTakenIndexByName("DoubleDamageChance");
-            //if (doubleDamageChangeTalentIndex!=-1)
-           // {
-             //   talentManager.takenTalents[doubleDamageChangeTalentIndex].talentLogic.ImplementTalent(this);
-           // }
+            if (talentManager.CheckTalentTakenIndexByName("DoubleDamageChance") != -1)
+            {
+                GetComponent<Talent_DoubleDamageChance>().ImplementTalent(this);
+            }
+            if (talentManager.CheckTalentTakenIndexByName("Toxin") != -1)
+            {
+                GetComponent<Talent_Toxin>().targetEnemy = collision.GetComponent<Enemy>();
+                GetComponent<Talent_Toxin>().enabled = true;
+            }
             collision.GetComponent<Enemy>().TakeDamage(10);
             Debug.Log("hits");
         }

@@ -9,13 +9,4 @@ public class TalentSO : ScriptableObject
     public string talentName;
     public string talentDescription;
     public bool isTaken;
-
-    public virtual void ImplementTalent()
-    {
-
-    }
-    public virtual void ImplementTalent(Sword sword)
-    {
-
-    }
 }
