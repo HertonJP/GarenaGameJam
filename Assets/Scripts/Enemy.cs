@@ -9,10 +9,13 @@ public class Enemy : MonoBehaviour
     public bool playerInRange = false;
     private Animator anim;
     private Score score;
+    private bool isFacingRight = true;
     [SerializeField] private GameObject floatingTextPrefab;
+    private Transform target;
 
     void Start()
     {
+        target = GameObject.Find("Hero").transform;
         score = GameObject.Find("Manager").GetComponent<Score>();
         enemyHP = enemyMaxHP;
         anim = GetComponent<Animator>();
@@ -21,6 +24,7 @@ public class Enemy : MonoBehaviour
     
     void Update()
     {
+        Vector2 direction = (target.position - transform.position).normalized;
         if (playerInRange)
         {
             anim.SetTrigger("isAttack");
@@ -29,6 +33,14 @@ public class Enemy : MonoBehaviour
         {
             Die();
             Destroy(this.gameObject);
+        }
+        if (direction.x > 0 && !isFacingRight)
+        {
+            Flip();
+        }
+        else if (direction.x < 0 && isFacingRight)
+        {
+            Flip();
         }
     }
 
@@ -53,4 +65,11 @@ public class Enemy : MonoBehaviour
 
     }
 
+    void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 newScale = transform.localScale;
+        newScale.x *= -1;
+        transform.localScale = newScale;
+    }
 }

@@ -69,7 +69,11 @@ public class Spawner : MonoBehaviour
 
     private void EndWave()
     {
-        talentPanel.SetActive(true);
+        if(currentWave != 0 && currentWave != 1)
+        {
+            talentPanel.SetActive(true);
+        }
+        
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
