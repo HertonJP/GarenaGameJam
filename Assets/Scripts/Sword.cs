@@ -16,6 +16,10 @@ public class Sword : MonoBehaviour
 
     [SerializeField] private TalentManager talentManager;
 
+    [SerializeField] float coolDownTimer;
+    [SerializeField] float currCoolDownTimer;
+
+    [SerializeField] bool isOnCoolDown;
     private void Awake()
     {
        // Cursor.visible = false;
@@ -26,24 +30,35 @@ public class Sword : MonoBehaviour
     private void Start()
     {
         currMousePos = Input.mousePosition;
+        currCoolDownTimer = coolDownTimer;
     }
 
     private void Update()
     {
+        if (isOnCoolDown)
+            currCoolDownTimer -= Time.deltaTime;
+
+        if (currCoolDownTimer <= 0)
+            isOnCoolDown = false;
+
         if (Input.mousePosition != currMousePos)
         {
             GetComponent<Collider2D>().enabled = true;
             currMousePos = lastMousePos;
             currMousePos = Input.mousePosition;
+
+            
         }else if(Input.mousePosition == currMousePos)
         {
+            
             GetComponent<Collider2D>().enabled = false;
+            Debug.Log("Disable Collider");
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && !isOnCoolDown)
         {
             Debug.Log("hit");
             if (talentManager.takenTalents[0] != null && talentManager.CheckTalentTakenIndexByName("DoubleDamageChance") != -1)
@@ -56,6 +71,9 @@ public class Sword : MonoBehaviour
                 GetComponent<Talent_Toxin>().enabled = true;
             }
             collision.GetComponent<Enemy>().TakeDamage(swordDamage_);
+            currCoolDownTimer = coolDownTimer;
+            isOnCoolDown = true;
+            
             Camera.main.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
             swordDamage_ = swordData.swordDamage;
         }

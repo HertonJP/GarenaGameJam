@@ -39,10 +39,6 @@ public class TalentRandomizer : MonoBehaviour
             }
             currSlot++;
         }
-        else
-        {
-            return;
-        }
 
         pickTalentUI.SetActive(false);
         Time.timeScale = 1;
