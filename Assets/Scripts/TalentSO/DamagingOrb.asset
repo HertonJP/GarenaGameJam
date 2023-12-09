@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6aa0692d79a944b90a69e660abf49e, type: 3}
   m_Name: DamagingOrb
   m_EditorClassIdentifier: 
-  talentSprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  talentSprite: {fileID: -1821286681, guid: b0e4f5756c09fab47b9e62fdae95b7b4, type: 3}
   talentName: Damaging Orb
   talentDescription: A damaging orb rotates around you and deal damage to enemies
   isTaken: 0

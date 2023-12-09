@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6aa0692d79a944b90a69e660abf49e, type: 3}
   m_Name: Toxin
   m_EditorClassIdentifier: 
-  talentSprite: {fileID: 21300000, guid: 70e5f5eb1cee58c42bd0f0b6546eff27, type: 3}
+  talentSprite: {fileID: 886087770, guid: b0e4f5756c09fab47b9e62fdae95b7b4, type: 3}
   talentName: Toxin
   talentDescription: Deal x amount of damage every tick for x second(s)
   isTaken: 0
