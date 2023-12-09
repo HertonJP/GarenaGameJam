@@ -33,10 +33,14 @@ public class PlayerStats : MonoBehaviour
             playerHP = 0;
             coin.coin += score.score / 10;
             PlayerPrefs.SetInt("Coin", coin.coin);
+            Invoke("Die", 2f);
         }
     }
 
-
+    public void Die()
+    {
+        Destroy(this.gameObject);
+    }
     public void TakeDamage(int damageRecieved)
     {
         playerHP -= damageRecieved;
