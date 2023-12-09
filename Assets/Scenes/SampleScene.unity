@@ -1859,6 +1859,7 @@ MonoBehaviour:
   - {fileID: 1507301617}
   - {fileID: 1675271557}
   wavesUntilStatIncrease: 5
+  talentPanel: {fileID: 1878613655}
   wavesCompleted: 0
   currentWave: 0
 --- !u!114 &860914314

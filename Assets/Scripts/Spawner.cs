@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float difficultyScalingFactor = 0.75f;
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private int wavesUntilStatIncrease = 5;
+    [SerializeField] private GameObject talentPanel;
     public int wavesCompleted = 0;
     private TextMeshProUGUI waveText;
 
@@ -38,6 +39,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        talentPanel.SetActive(false);
         waveText = GameObject.Find("WaveText").GetComponent<TextMeshProUGUI>();
         waveText.text = "Current Wave: " + currentWave.ToString();
         StartCoroutine(StartWave());
@@ -67,6 +69,7 @@ public class Spawner : MonoBehaviour
 
     private void EndWave()
     {
+        talentPanel.SetActive(true);
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
