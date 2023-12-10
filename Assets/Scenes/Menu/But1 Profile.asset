@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Timeline 1_0000 Profile
+  m_Name: But1 Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 8911626998785386361}
---- !u!114 &8911626998785386361
+  - {fileID: 5938533905235909542}
+--- !u!114 &5938533905235909542
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32,13 +32,13 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 4.42
+    m_Value: 0.63
   scatter:
     m_OverrideState: 1
-    m_Value: 0.532
+    m_Value: 0.7
   clamp:
     m_OverrideState: 1
     m_Value: 65472
