@@ -12,6 +12,7 @@ namespace BehaviorDesigner.Runtime.Tasks
     [TaskIcon("BehaviorTreeReferenceIcon.png")]
     public class BehaviorTreeReference : BehaviorReference
     {
-        // intentionally left blank - subclass of BehaviorReference
+        // intentionally left blank -
+        // class of BehaviorReference
     }
 }
