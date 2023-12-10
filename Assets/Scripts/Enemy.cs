@@ -14,6 +14,10 @@ public class Enemy : MonoBehaviour
     private Transform target;
     [SerializeField] private Collider2D attackColl;
     private Spawner spawner;
+    public AudioSource sfxSource;
+    public List<AudioClip> sfxClips;
+    public Enemies enemies;
+
     void Start()
     {
         spawner = GameObject.Find("Manager").GetComponent<Spawner>();
@@ -21,6 +25,7 @@ public class Enemy : MonoBehaviour
         score = GameObject.Find("Manager").GetComponent<Score>();
         enemyHP = enemyMaxHP;
         anim = GetComponent<Animator>();
+        enemies = GetComponent<Enemies>();
     }
 
     public void activateCollider()
@@ -66,6 +71,23 @@ public class Enemy : MonoBehaviour
     {
         enemyHP -= damage;
         ShowFloatingText(damage.ToString());
+        if (enemies.type == Enemies.EnemyTypes.Slime)
+        {
+            Debug.Log("here");
+            sfxSource.clip =sfxClips[0];
+            sfxSource.Play();
+        }
+        else if (enemies.type == Enemies.EnemyTypes.Api)
+        {
+            Debug.Log("this");
+            sfxSource.clip = sfxClips[1];
+            sfxSource.Play();
+        }
+        else
+        {
+            sfxSource.clip = sfxClips[2];
+            sfxSource.Play();
+        }
     }
 
     private void Die()

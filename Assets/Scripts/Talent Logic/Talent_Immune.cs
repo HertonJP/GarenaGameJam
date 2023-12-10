@@ -10,7 +10,6 @@ public class Talent_Immune : MonoBehaviour
     {
         if (talentManager.CheckTalentTakenIndexByName("Shield") != -1)
         {
-            Debug.Log("immune");
             ImplementTalent();
         }
     }

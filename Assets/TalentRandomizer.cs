@@ -14,6 +14,15 @@ public class TalentRandomizer : MonoBehaviour
     [SerializeField] private List<GameObject> talentButtons = new();
     [SerializeField] private List<string> talentStringList = new();
     [SerializeField] private GameObject pickTalentUI;
+    [SerializeField] private List<AudioClip> sfxList;
+    bool shouldPlay;
+
+    private void OnEnable()
+    {
+        GetComponent<AudioSource>().clip = sfxList[0];
+        GetComponent<AudioSource>().Play();
+        RandomizeTalent();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +33,19 @@ public class TalentRandomizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (shouldPlay)
+        {
+            
+            GetComponent<AudioSource>().clip = sfxList[1];
+            GetComponent<AudioSource>().Play();
+            shouldPlay = false;
+        }
+
     }
 
     public void TalentButtonClicked(ButtonData data)
     {
+        shouldPlay = true;
         if (currSlot < 3)
         {
             for (int i = 0; i < talentList.Count; i++)
@@ -66,48 +83,8 @@ public class TalentRandomizer : MonoBehaviour
         }
     }
 
-    //private void AddButtonAction(string talentName, int index)
-    //{
-    //    switch (talentName)
-    //    {
-    //        case "DamagingOrb":
-    //            for(int i=0; i < talentList.Count; i++)
-    //            {
-    //                if (talentList[i].talentName == talentName)
-    //                    talentManager.takenTalents[index] = talentList[i];
-    //            }
-                
-    //            break;
-    //        case "DoubleDamageChance":
-    //            for (int i = 0; i < talentList.Count; i++)
-    //            {
-    //                if (talentList[i].talentName == talentName)
-    //                    talentManager.takenTalents[index] = talentList[i];
-    //            }
-    //            break;
-    //        case "Immune":
-    //            for (int i = 0; i < talentList.Count; i++)
-    //            {
-    //                if (talentList[i].talentName == talentName)
-    //                    talentManager.takenTalents[index] = talentList[i];
-    //            }
-    //            break;
-    //        case "SwordEnlargement":
-    //            for (int i = 0; i < talentList.Count; i++)
-    //            {
-    //                if (talentList[i].talentName == talentName)
-    //                    talentManager.takenTalents[index] = talentList[i];
-    //            }
-    //            break;
-    //        case "Toxin":
-    //            for (int i = 0; i < talentList.Count; i++)
-    //            {
-    //                if (talentList[i].talentName == talentName)
-    //                    talentManager.takenTalents[index] = talentList[i];
-    //            }
-    //            break;
-    //        default:
-    //            break;
-    //    }
-    //}
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(.5f);
+    }
 }

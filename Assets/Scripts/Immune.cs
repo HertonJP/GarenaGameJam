@@ -28,15 +28,15 @@ public class Immune : MonoBehaviour
             if (!hasStartImmune)
             {
                 GetComponent<PlayerStats>().canBeDamaged = false;
-                GetComponent<SpriteRenderer>().color = Color.red;
                 StartCoroutine(ImmuneDuration());
             }
         }
+        if(hasStartImmune)
+            StartCoroutine(GetComponent<PlayerStats>().Flicker());
     }
     private IEnumerator ImmuneDuration()
     {
         hasStartImmune = true;
-        Debug.Log("b");
         yield return new WaitForSeconds(immuneDuration);
         GetComponent<SpriteRenderer>().color = Color.white;
         GetComponent<PlayerStats>().canBeDamaged = true;

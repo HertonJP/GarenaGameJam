@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5407663588929337144}
   - component: {fileID: 2906566821846685570}
   - component: {fileID: 3759332304285564035}
+  - component: {fileID: 467512265935628934}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -198,8 +199,8 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.7
-  gizmoViewMode: 2
-  showBehaviorDesignerGizmo: 1
+  gizmoViewMode: 0
+  showBehaviorDesignerGizmo: 0
 --- !u!114 &5407663588929337144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee6a55cbbc0f0a4fb0013bcc37930dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!114 &2906566821846685570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +231,11 @@ MonoBehaviour:
   playerInRange: 0
   floatingTextPrefab: {fileID: 4452427290877172559, guid: 57631cb5d9b9ada4b8a336801e709e03, type: 3}
   attackColl: {fileID: 788200244790767903}
+  sfxSource: {fileID: 467512265935628934}
+  sfxClips:
+  - {fileID: 8300000, guid: af2e3d9c491ccf44c80e8b82b9b4890c, type: 3}
+  - {fileID: 8300000, guid: bc70cf659fb67364fae1e4556377315e, type: 3}
+  - {fileID: 8300000, guid: ea877473bc13f554ea9bc5c76a3d4bf0, type: 3}
 --- !u!95 &3759332304285564035
 Animator:
   serializedVersion: 5
@@ -250,6 +257,102 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &467512265935628934
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873971431119117240}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8582488274549390885
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +444,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDamage: 5
+  enemyShakeSource:
+  - {fileID: 0}
+  - {fileID: 0}
+  enemies: {fileID: 5407663588929337144}
 --- !u!1 &8652138295462838007
 GameObject:
   m_ObjectHideFlags: 0

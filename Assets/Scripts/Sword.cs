@@ -20,6 +20,10 @@ public class Sword : MonoBehaviour
     [SerializeField] float currCoolDownTimer;
 
     [SerializeField] bool isOnCoolDown;
+
+    [SerializeField] GameObject[] slashEffects;
+
+    [SerializeField] CinemachineImpulseSource swordShakeSource;
     private void Awake()
     {
        // Cursor.visible = false;
@@ -70,11 +74,15 @@ public class Sword : MonoBehaviour
                 GetComponent<Talent_Toxin>().targetEnemy = collision.GetComponent<Enemy>();
                 GetComponent<Talent_Toxin>().enabled = true;
             }
+            for(int i=0; i<slashEffects.Length; i++)
+            {
+                Instantiate(slashEffects[Random.Range(0, 4)], collision.transform.position,Quaternion.identity);
+            }
             collision.GetComponent<Enemy>().TakeDamage(swordDamage_);
             currCoolDownTimer = coolDownTimer;
             isOnCoolDown = true;
             
-            Camera.main.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+            swordShakeSource.GenerateImpulse();
             swordDamage_ = swordData.swordDamage;
         }
     }
