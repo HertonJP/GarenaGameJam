@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    
+    public enum EnemyTypes
+    {
+        Slime,
+        Api,
+        Goblin
+    };
+
+    public EnemyTypes type;
+
     // Start is called before the first frame update
     void Start()
     {

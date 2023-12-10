@@ -24,7 +24,7 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (talentManager.takenTalents[0] != null && talentManager.CheckTalentTakenIndexByName("Immune") != -1)
+        if (talentManager.CheckTalentTakenIndexByName("Immune") != -1)
         {
             GetComponent<Immune>().enabled = true;
         }
@@ -33,17 +33,38 @@ public class PlayerStats : MonoBehaviour
             playerHP = 0;
             coin.coin += score.score / 10;
             PlayerPrefs.SetInt("Coin", coin.coin);
-            Invoke("Die", .5f);
+            Die();
         }
     }
 
     public void Die()
     {
-        Destroy(this.gameObject);
+        GetComponent<AudioSource>().Play();
+        Destroy(this.gameObject,1.5f);
     }
     public void TakeDamage(int damageRecieved)
     {
+        StartCoroutine(Flicker());
         playerHP -= damageRecieved;
         healthbar.fillAmount = (float)playerHP / playerMaxHP;
+    }
+
+    private void Flickering()
+    {
+
+    }
+
+    public IEnumerator Flicker()
+    {
+        canBeDamaged = false;
+        for(int i=0; i<3; i++)
+        {
+            
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .5f);
+            yield return new WaitForSeconds(.5f);
+            GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(.5f);
+        }
+        canBeDamaged = true;
     }
 }

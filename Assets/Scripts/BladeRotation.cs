@@ -16,5 +16,9 @@ public class BladeRotation : MonoBehaviour
     {
         
         transform.localEulerAngles = new Vector3(transform.localRotation.x, transform.localRotation.y, -Camera.main.ScreenToWorldPoint(Input.mousePosition).y * swordSwingSpeed);
+        if (transform.localEulerAngles.z > 360)
+        {
+            transform.localEulerAngles = Vector3.zero;
+        }
     }
 }
