@@ -7,11 +7,15 @@ public class blade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Time.timeScale != 0)
+        {
+            Cursor.visible = false;
+        }
     }
 }

@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b839e658c60f61f468fb7a66f025f655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMaxHP: 20
+  enemyMaxHP: 22
   enemyHP: 0
   playerInRange: 0
   floatingTextPrefab: {fileID: 4452427290877172559, guid: 57631cb5d9b9ada4b8a336801e709e03, type: 3}
@@ -236,6 +236,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: af2e3d9c491ccf44c80e8b82b9b4890c, type: 3}
   - {fileID: 8300000, guid: bc70cf659fb67364fae1e4556377315e, type: 3}
   - {fileID: 8300000, guid: ea877473bc13f554ea9bc5c76a3d4bf0, type: 3}
+  enemies: {fileID: 0}
 --- !u!95 &3759332304285564035
 Animator:
   serializedVersion: 5
@@ -445,7 +446,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDamage: 5
   enemyShakeSource: []
-  enemies: {fileID: 5407663588929337144}
 --- !u!1 &8652138295462838007
 GameObject:
   m_ObjectHideFlags: 0

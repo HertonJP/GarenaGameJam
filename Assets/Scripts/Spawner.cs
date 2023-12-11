@@ -76,6 +76,7 @@ public class Spawner : MonoBehaviour
         }
         if(currentWave == 3 || currentWave == 6|| currentWave == 9 )
         {
+            
             talentPanel.SetActive(true);
             Time.timeScale = 0;
         }

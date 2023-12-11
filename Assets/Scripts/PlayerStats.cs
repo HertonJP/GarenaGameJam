@@ -12,9 +12,11 @@ public class PlayerStats : MonoBehaviour
     private Coin coin;
     private Score score;
     public Image healthbar;
+    public GameObject losePanel;
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         score = GameObject.Find("Manager").GetComponent<Score>();
         coin = GameObject.Find("Manager").GetComponent<Coin>();
         playerHP = playerMaxHP;
@@ -40,6 +42,7 @@ public class PlayerStats : MonoBehaviour
     public void Die()
     {
         GetComponent<AudioSource>().Play();
+        losePanel.SetActive(true);
         Destroy(this.gameObject,1.5f);
     }
     public void TakeDamage(int damageRecieved)
@@ -47,11 +50,6 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine(Flicker());
         playerHP -= damageRecieved;
         healthbar.fillAmount = (float)playerHP / playerMaxHP;
-    }
-
-    private void Flickering()
-    {
-
     }
 
     public IEnumerator Flicker()

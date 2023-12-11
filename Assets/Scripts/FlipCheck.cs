@@ -14,14 +14,14 @@ public class FlipCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Camera.main.transform.eulerAngles = new Vector3(0, 0, 10);
+        //Camera.main.transform.eulerAngles = new Vector3(0, 0);
         if(Camera.main.ScreenToWorldPoint(Input.mousePosition).x> transform.position.x)
         {
-            transform.eulerAngles = new Vector3(0, -180, 10);
+            transform.eulerAngles = new Vector3(0, -180);
         }
         else if(Camera.main.ScreenToWorldPoint(Input.mousePosition).x < transform.position.x)
         {
-            transform.eulerAngles = new Vector3(0, 0, 10);
+            transform.eulerAngles = new Vector3(0, 0);
         }
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3369812376705473524}
   - component: {fileID: 8855404010097933608}
   - component: {fileID: -8626522704366999505}
+  - component: {fileID: 1556330570493349196}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Enemy
@@ -57,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: e77c3ff8535783145b5571f29c0a4fd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -204,3 +205,23 @@ MonoBehaviour:
   playerInRange: 0
   floatingTextPrefab: {fileID: 4452427290877172559, guid: 57631cb5d9b9ada4b8a336801e709e03, type: 3}
   attackColl: {fileID: 0}
+  sfxSource: {fileID: 0}
+  sfxClips: []
+  enemies: {fileID: 0}
+--- !u!114 &1556330570493349196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255590979161118288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 26382caeba7f55b4f95b343cbf36cc34, type: 2}

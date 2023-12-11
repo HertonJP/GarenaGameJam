@@ -22,6 +22,7 @@ public class TalentRandomizer : MonoBehaviour
         GetComponent<AudioSource>().clip = sfxList[0];
         GetComponent<AudioSource>().Play();
         RandomizeTalent();
+        Cursor.visible = true;
     }
 
     // Start is called before the first frame update
