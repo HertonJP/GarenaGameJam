@@ -8882,6 +8882,7 @@ GameObject:
   - component: {fileID: 860914313}
   - component: {fileID: 860914314}
   - component: {fileID: 860914315}
+  - component: {fileID: 860914316}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -8968,6 +8969,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coin: 0
+--- !u!114 &860914316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860914310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08fb995e1daf254fbc1df134b058bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &865399700
 GameObject:
   m_ObjectHideFlags: 0

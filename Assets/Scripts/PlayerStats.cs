@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         score = GameObject.Find("Manager").GetComponent<Score>();
         coin = GameObject.Find("Manager").GetComponent<Coin>();
         playerHP = playerMaxHP;

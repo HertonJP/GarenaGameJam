@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LosePanel : MonoBehaviour
 {
+    private void OnEnable()
+    {
+        Cursor.visible = true;
+    }
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
